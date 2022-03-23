@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Juego del Ahorcado</title>
+</head>
+<body>
+    <header>
+        <h1>JUEGO DEL AHORCADO CON JAVASCRIPT</h1>
+    </header>
+    <div id="inicioJuego" style="inline-block;">
+
+        <div>
+            <form id="validationHTML" name="validationHTML">
+                <label forHTML="campo" class="validation">Introduzca solo letras:</label>
+                <br>
+                <input type="text" id="campo" name="campo"/>
+                <button type="button" class="btn" onclick='cargarPalabras()'>Agregar palabra</button>
+            </form>
+        </div>
+        
+        <div>
+            <details>
+                <summary> Palabras</summary>
+                <p id="palabrasAgregadas"></p>
+            </details>
+        
+            <input type="button" id="jugar" class="btn" value="Iniciar juego" onclick="elegirPalabra()">
+        </div>
+
+        
+        
+    
+    </div>
+
+    <div id="juego" style="display: none;">
+        
+        <div id="tamano">
+
+            <section id="izquierda">
+                <div id="parrafo">
+                    <p class="validation">Introduzca una letra, por favor: </p>
+                    <input type="text" maxlength="1" id="letra" onkeydown="calcular()"> 
+                    <!-- <button id="calcular">Evaluar letra</button> -->
+                </div>
+                
+                <div id="rayas">
+                    
+                    <p id="salida"></p>
+                
+                </div>
+    
+                <div id="botones">
+                    <input type="button" class="btn" value="Volver a jugar" onclick="elegirPalabra()"></a> <a href="index.html"><input type="button" class="btn" value="Cambiar palabras"></a>
+                </div>
+            
+            </section>
+            
+            <section id="dibujo">
+                
+                <canvas id="lienzo" width="500px" height="500px">
+                    Tu navegador no soporta Canvas.
+                </canvas>
+                
+                <div>
+                    <h3>LETRAS INCORRECTAS</h3>
+                    <p id="incorrectas"></p>
+                </div>
+            
+            </section>
+
+        </div>
+        
+    </div>
+    
+    <script src="ahorcado.js"></script>
+    <script src="canvas.js"></script>
+
+</body>
+
+</html>
